@@ -38,7 +38,7 @@ parking-webapp/
   mocks/                      Fake server. Add mock data or change responses here.
     data.js                   Fake sensors, pools, and events.
     handlers.js               Fake API routes.
-    live.js                   Fake live updates and fake cars passing.
+    cars.js                   Fake cars passing every few seconds.
     browser.js                Starts the mocks.
     README.md                 Notes on the mocks.
   public/

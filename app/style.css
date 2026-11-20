@@ -1,0 +1,13 @@
+/* Start page */
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.start button {
+  padding: 12px 24px;
+}

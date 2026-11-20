@@ -1,6 +1,6 @@
 # Instructions
 
-Work only inside `app/`. Everything outside it is set up for you.
+All work on the pages is done in `app/`. To add more mock data or change how the fake server responds, see `mocks/`, but that should rarely be necessary for now.
 
 ## Pages
 
@@ -50,4 +50,4 @@ document.getElementById("pools").textContent = pools[0].name;
 - Data only comes from `app/api.js`. Use it, do not edit it.
 - While mocks are on, `app/api.js` gets fake data from `mocks/`. Later it gets real data from the server. Your code does not change.
 - Host and Guest are separate. They share only `app/api.js` and `app/style.css`.
-- Do not edit anything outside `app/`.
+- Mock data and fake server responses are in `mocks/`.

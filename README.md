@@ -7,7 +7,8 @@ Plain HTML, CSS, and JavaScript. No framework. Vite is the dev server. MSW (Mock
 
 ```
 parking-webapp/
-  app/                        Everything you work on.
+  app/                        Where most of the work will happen.
+    README.md                 What to build: Host and Guest requirements for the Dec 2 demo.
     index.html                Start page. "I am a Guest" / "I am a Host". Served at /.
     style.css                 Styles for every page.
     api.js                    Functions to get data from the server. Use these, never fetch URLs directly. Do not edit.
@@ -17,7 +18,7 @@ parking-webapp/
     guest/
       index.html              Guest page (HTML). Served at /guest/.
       main.js                 Guest page JavaScript.
-  mocks/                      Fake server. Do not edit.
+  mocks/                      Fake server. Add mock data or change responses here.
     data.js                   Fake sensors, pools, and events.
     handlers.js               Fake API routes.
     live.js                   Fake live updates and fake cars passing.
@@ -32,7 +33,8 @@ parking-webapp/
 
 ## How it fits together
 
-- Work only inside `app/`.
+- All work on the pages is done in `app/`. To add more mock data or change how the fake server responds, see `mocks/`.
 - HTML file makes the page. `main.js` holds the logic. `app/api.js` gets the data.
 - Host and Guest are separate. They share only `app/api.js` and `app/style.css`.
+- See `app/README.md` for what to build.
 - See `INSTRUCTIONS.md` for details and an example.

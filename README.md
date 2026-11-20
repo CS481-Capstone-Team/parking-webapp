@@ -3,6 +3,8 @@ Web application for viewing real-time parking availability.
 
 Plain HTML, CSS, and JavaScript. No framework. Vite is the dev server. MSW (Mock Service Worker) fakes the server so the app runs without it.
 
+Most of the work happens in [`app/`](app/). See [`app/README.md`](app/README.md) for what to build.
+
 ## Run
 
 Needs [Node.js](https://nodejs.org) 22.13 or newer.

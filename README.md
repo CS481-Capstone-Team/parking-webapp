@@ -3,6 +3,21 @@ Web application for viewing real-time parking availability.
 
 Plain HTML, CSS, and JavaScript. No framework. Vite is the dev server. MSW (Mock Service Worker) fakes the server so the app runs without it.
 
+## Run
+
+Needs [Node.js](https://nodejs.org) 22.13 or newer.
+
+In a terminal, in the `parking-webapp` folder:
+
+```
+npm install
+npm run dev
+```
+
+Open http://localhost:5173 in your browser.
+
+`npm install` is only needed the first time.
+
 ## Folder structure
 
 ```

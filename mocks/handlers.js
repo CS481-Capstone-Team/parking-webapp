@@ -31,7 +31,7 @@ function toHostPool(pool) {
   };
 }
 
-// What a Guest sees for a pool: open spots only, kept between 0 and capacity.
+// What a Guest sees for a pool: availability (capacity minus cars inside), kept between 0 and capacity.
 function toGuestPool(pool) {
   const open = pool.capacity - getPoolCount(pool);
   const available = Math.min(Math.max(open, 0), pool.capacity);
@@ -186,7 +186,7 @@ export const handlers = [
     return HttpResponse.json(matches);
   }),
 
-  // G-02 to G-04: an establishment's public pools with open spots.
+  // G-02 to G-04: an establishment's public pools with their availability.
   http.get("/api/establishments/:id/pools", ({ params }) => {
     const establishment = db.establishments.find((e) => e.id === params.id);
     if (!establishment) {

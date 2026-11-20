@@ -19,5 +19,5 @@ Functional requirements for the Capstone 1 demonstration on December 2, 2026. Sm
 | --- | --- | --- |
 | G-01 | **Search establishment:** Guest searches for an establishment by name and picks it. | No |
 | G-02 | **See lots:** Guest sees only that establishment's public pools. | Yes |
-| G-03 | **See availability:** Each lot shows its name and open spots out of capacity, kept between 0 and capacity. | Yes |
-| G-04 | **See full:** A lot shows "Full" when it has no open spots. | Yes |
+| G-03 | **See availability:** Each lot shows its name and availability (capacity minus cars inside), kept between 0 and capacity. | Yes |
+| G-04 | **See full:** A lot shows "Full" when availability is 0. | Yes |

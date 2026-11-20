@@ -72,6 +72,6 @@ After regenerating, clear `localStorage` in the browser so the new events load.
 | PATCH | `/api/pools/:id` | Changes a pool (e.g. public on or off). |
 | POST | `/api/pools/:id/count` | Sets a pool's count. Body: `{ count }`. Any whole number. |
 | GET | `/api/establishments?name=` | Establishments whose name matches. |
-| GET | `/api/establishments/:id/pools` | That establishment's public pools. Available spots kept between 0 and capacity. |
+| GET | `/api/establishments/:id/pools` | That establishment's public pools. Availability (capacity minus cars inside) kept between 0 and capacity. |
 
 Pages get live data by calling these again every few seconds.

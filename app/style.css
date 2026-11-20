@@ -11,3 +11,12 @@
 .start button {
   padding: 12px 24px;
 }
+
+/* Placeholder text centered on an empty page. Remove once the page has content. */
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}

@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "dev:server": "vite --mode server"
   },
   "devDependencies": {
     "msw": "^3.0.7",

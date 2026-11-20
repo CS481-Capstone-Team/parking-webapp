@@ -24,23 +24,46 @@ Styles for every page go in `app/style.css`.
 
 ## Example
 
-Guest page showing the first pool's name.
+Host page showing the first pool's count, updated every 3 seconds.
 
-`app/guest/index.html` (makes the page):
+`app/host/index.html` (makes the page):
 ```html
 <link rel="stylesheet" href="/style.css">
-<h1>Parking</h1>
-<div id="pools"></div>
+<h1>Host</h1>
+<div id="count"></div>
 <script type="module" src="./main.js"></script>
 ```
 
-`app/guest/main.js` (logic, gets data from `api.js`):
+`app/host/main.js` (logic, gets data from `api.js`):
 ```js
-import { getGuestPools } from "../api.js";
+import { getPools } from "../api.js";
 
-const pools = await getGuestPools();
-document.getElementById("pools").textContent = pools[0].name;
+async function showCount() {
+  const pools = await getPools();
+  document.getElementById("count").textContent =
+    `${pools[0].name}: ${pools[0].count} / ${pools[0].capacity}`;
+}
+
+showCount();                   // show it right away
+setInterval(showCount, 3000);  // then ask again every 3 seconds
 ```
+
+Live data works this way: ask again every few seconds.
+
+## Functions in `api.js`
+
+| Function | For |
+| --- | --- |
+| `getSensors()` | Host: sensors with status and battery |
+| `getEvents()` | Host: every car event |
+| `getPools()` | Host: pools with their count |
+| `createPool({ name, capacity, sensors })` | Host: make a pool |
+| `setPoolPublic(poolId, isPublic)` | Host: show or hide a pool for Guests |
+| `resetPool(poolId)` | Host: set a pool's count to 0 |
+| `searchEstablishments(name)` | Guest: find establishments by name |
+| `getEstablishmentPools(establishmentId)` | Guest: an establishment's public pools |
+
+If the server says no (e.g. a pool without an "in" sensor), the function throws an error. Show its message with `try { ... } catch (err) { ... err.message ... }`.
 
 ## Rules
 

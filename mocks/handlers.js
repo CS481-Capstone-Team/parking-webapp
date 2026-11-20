@@ -155,16 +155,22 @@ export const handlers = [
     return HttpResponse.json(toHostPool(pool));
   }),
 
-  // H-05: set a pool's count back to 0.
-  http.post("/api/pools/:id/reset", ({ params }) => {
+  // H-05: set a pool's count by hand. Body: { count: 12 }
+  // Any whole number is accepted. The page is the one that stops negative numbers.
+  http.post("/api/pools/:id/count", async ({ request, params }) => {
     const pool = hostPools().find((p) => p.id === params.id);
     if (!pool) {
       return error(404, "Pool not found.");
     }
 
-    // Only events after resetAt are counted from now on.
+    const body = await request.json();
+    if (!Number.isInteger(body.count)) {
+      return error(400, "count must be a whole number.");
+    }
+
+    // The count starts again from this number. Only events after resetAt are added to it.
     pool.resetAt = new Date().toISOString();
-    pool.resetCount = 0;
+    pool.resetCount = body.count;
     save();
     return HttpResponse.json(toHostPool(pool));
   }),

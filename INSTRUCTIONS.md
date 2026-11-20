@@ -59,7 +59,7 @@ Live data works this way: ask again every few seconds.
 | `getPools()` | Host: pools with their count |
 | `createPool({ name, capacity, sensors })` | Host: make a pool |
 | `setPoolPublic(poolId, isPublic)` | Host: show or hide a pool for Guests |
-| `resetPool(poolId)` | Host: set a pool's count to 0 |
+| `setPoolCount(poolId, count)` | Host: set a pool's count to a number. Do not allow below 0. |
 | `searchEstablishments(name)` | Guest: find establishments by name |
 | `getEstablishmentPools(establishmentId)` | Guest: an establishment's public pools |
 

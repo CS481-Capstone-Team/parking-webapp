@@ -70,7 +70,7 @@ After regenerating, clear `localStorage` in the browser so the new events load.
 | GET | `/api/pools` | All of the Host's pools with their live count. |
 | POST | `/api/pools` | Creates a pool. `400` if it has no in or no out sensor, or a sensor is already in a pool. |
 | PATCH | `/api/pools/:id` | Changes a pool (e.g. public on or off). |
-| POST | `/api/pools/:id/reset` | Resets a pool's count to 0. |
+| POST | `/api/pools/:id/count` | Sets a pool's count. Body: `{ count }`. Any whole number. |
 | GET | `/api/establishments?name=` | Establishments whose name matches. |
 | GET | `/api/establishments/:id/pools` | That establishment's public pools. Available spots kept between 0 and capacity. |
 

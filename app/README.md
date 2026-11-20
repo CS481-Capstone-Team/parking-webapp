@@ -10,7 +10,7 @@ Functional requirements for the Capstone 1 demonstration on December 2, 2026. Sm
 | H-02 | **Browse car records:** Host sees recorded cars (sensor, time, direction, speed) in a table they can filter and sort. | No |
 | H-03 | **Make a pool:** Host makes a pool with a name and capacity, and adds sensors as in or out. Cannot be saved without at least one in and one out sensor. | No |
 | H-04 | **See pool count:** Host sees the pool's real count out of capacity. | Yes |
-| H-05 | **Reset pool:** Host can reset the pool's count to 0. | No |
+| H-05 | **Set pool count:** Host sets the pool's count to a number (e.g. after counting the lot by hand). Numbers below 0 are not allowed. | No |
 | H-06 | **Share pool:** Host can make the pool visible to Guests. | No |
 
 ## Guest

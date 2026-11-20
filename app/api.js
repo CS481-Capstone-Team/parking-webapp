@@ -48,9 +48,10 @@ export function setPoolPublic(poolId, isPublic) {
   return request("PATCH", `/api/pools/${poolId}`, { isPublic });
 }
 
-// H-05: sets a pool's count back to 0. Returns the updated pool.
-export function resetPool(poolId) {
-  return request("POST", `/api/pools/${poolId}/reset`);
+// H-05: sets a pool's count to a number. Returns the updated pool.
+// The server accepts any whole number, so the page should stop negative numbers.
+export function setPoolCount(poolId, count) {
+  return request("POST", `/api/pools/${poolId}/count`, { count });
 }
 
 // ---------- Guest ----------
